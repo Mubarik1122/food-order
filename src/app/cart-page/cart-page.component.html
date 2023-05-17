@@ -1,0 +1,54 @@
+<app-notfound [visible]="!cart || cart.items.length <= 0"
+notFoundmassage="Item Not Found!"
+resetLinkText="Go To Home Page!"></app-notfound>
+<div *ngIf="cart && cart.items.length >0" class="container">
+  <ul>
+    <li>
+      <div class="image">
+        <h5>Product</h5>
+      </div>
+      <div class="name">
+        <h5>Name</h5>
+      </div>
+      <div class="selector">
+        <h5>Quantity</h5>
+      </div>
+      <div class="price">
+        <h5>Price</h5>
+      </div>
+    </li>
+    <li *ngFor="let ct of cart.items">
+      <div class="image">
+      <img [src]="ct.food.imageUrl" [alt]="ct.food.name">
+      </div>
+      <div class="name">
+        <a routerLink="/food/{{ct.food.id}}">
+          {{ct.food.name}}
+        </a>
+      </div>
+      <div class="selecter">
+        <select #quantitySelect (change)="changeQuantity(ct, quantitySelect.value)">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="price">
+        {{ct.price| currency}}
+      </div>
+      <button class="remove-button" (click)="removeFRomCart(ct)"><i class="fa fa-trash" aria-hidden="true"></i>
+      </button>
+    </li>
+  </ul>
+  <div class="checkout">
+    <!-- <div class="food-count">
+      {{cart.items.length}}
+    </div> -->
+    <div class="food-price">
+      {{cart.totalPrice | currency}}
+    </div>
+    <a routerLink="/checkout">Proceed To Checkout</a>
+  </div>
+</div>

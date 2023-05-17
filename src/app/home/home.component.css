@@ -1,0 +1,75 @@
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+ul li a{
+  height: 20rem;
+  width: 20rem;
+  border: 1px solid whitesmoke;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+li a:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+.content{
+  padding: .5rem 1rem;
+  position: relative;
+}
+.favorite{
+  position: absolute;
+  top: .5rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  color: rgb(240, 9, 9);
+}
+.favorite.not{
+  color:rgb(5, 5, 5);
+}
+.product-item-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.origin{
+  flex: 9;
+}
+.origin span{
+  border-radius: 2rem;
+  background-color: whitesmoke;
+  color: gray;
+  font-size: .9rem;
+  margin-right: .3rem;
+  display: inline-block;
+}
+.cook-time{
+  flex:3;
+  font-size: .9rem;
+  text-align: center;
+}
+.price{
+  color: gray;
+  margin-top: .2rem;
+  margin-left: 1.2rem;
+  font-family: 'Sigmar', cursive;
+}
+.price:hover{
+  color:red;
+}
+.name{
+  font-family: 'Sigmar', cursive;
+  size: 50px;
+  cursor: pointer;
+
+}
+.name:hover{
+  color: orangered;
+}

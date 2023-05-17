@@ -1,0 +1,88 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 3rem;
+}
+.container > *{
+  min-width: 25rem;
+  max-width: 40rem;
+}
+img{
+  border-radius: 3rem;
+  flex: 1 0;
+  object-fit: cover;
+  height: 40rem;
+  margin: 1rem;
+
+}
+.detail{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0;
+  border-radius: 3rem;
+  padding: 2rem;
+  color: black;
+  margin-left: 1rem;
+}
+.detail .header{
+  display: flex;
+  justify-content: space-between;
+}
+.detail .name{
+  font-family: 'Sigmar', cursive;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.detail .favorite{
+color: red;
+font-size: 2.5rem;
+}
+.detail .favorite.not{
+  color: gray;
+  }
+.detail .origins{
+  display: flex;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+.detail .origins > span{
+  padding: .5rem;
+  font-size: 1.2rem;
+  margin: .5rem .5rem .5rem 0;
+  border-radius: 2rem;
+  color: white;
+  background-color: rgb(183, 185, 187);
+}
+.detail .cook-time{
+  margin: 1rem;
+}
+.detail .cook-time span{
+  padding: .6rem 2rem .6rem 0;
+  border-radius: 10rem;
+  font-size: 1.3rem;
+}
+.detail .price{
+  font-size: 1.8rem;
+  margin: 1rem 1rem 0;
+  color: rgb(2, 78, 28);
+
+}
+.detail .price::before{
+  content: "Price:";
+  color: gray;
+}
+.detail button{
+ background-color: orangered;
+ color: white;
+ border: none;
+ border-radius: 10rem;
+ font-size: 1.2rem;
+ padding: 1rem;
+}
+.detail button:hover{
+  opacity: .5;
+  cursor: pointer;
+ }

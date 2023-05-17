@@ -1,0 +1,73 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item  active">
+      <img src="../../assets/MountFoodbb.png" class="d-block w-100 bg" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/MountFoodbb1.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="../../assets/MountFoodbb2.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<app-search></app-search>
+<app-tag></app-tag>
+<app-notfound [visible]="!foods || foods.length <= 0"
+notFoundmassage="Item Not Found!"
+resetLinkText="Go Back"></app-notfound>
+<ul>
+  <li *ngFor="let food of foods">
+    <div routerLink="/food/{{food.id}}">
+    <a>
+       <img src="{{food.imageUrl}}" alt="Food img">
+
+    </a>
+    <div class="content">
+      <div class="name">
+        {{food.name}}
+      </div>
+
+      <span class="favorite {{food.fav?'':'not'}}">
+        <i class="fa fa-heart"></i>
+      </span>
+      <!-- <div class="star">
+        <star-rating value="food.star"
+        totalStars="5"
+        checkedcolor="orange"
+        uncheckedcolor="black"
+        [readOnly]="true">
+</star-rating>
+      </div> -->
+      <div class="product-item-footer">
+       <div class="origin">
+        <span *ngFor="let org of food.origins">
+          {{org}}
+        </span>
+       </div>
+       <div class="cook-time">
+        <span><i class="fa fa-clock"></i></span>
+        {{food.cooktime}}
+       </div>
+      </div>
+    </div>
+
+    <div class="price">
+      {{food.price| currency}}
+     </div>
+    </div>
+    </li>
+</ul>
